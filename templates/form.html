@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATS Resume Builder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      min-height: 100vh; display: flex; justify-content: center; align-items: center;
+      padding: 20px;
+    }
+    .container {
+      width: 100%; max-width: 750px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px; border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    }
+    h1 { text-align: center; font-size: 32px; margin-bottom: 30px; color: #003366; }
+    form { display: flex; flex-direction: column; gap: 20px; }
+    input, textarea {
+      width: 100%; padding: 14px; border: 1px solid #bbb; border-radius: 10px;
+      font-size: 15px; background: #f9f9f9;
+    }
+    input:focus, textarea:focus { border-color: #007bff; background: #fff; outline: none; }
+    textarea { resize: vertical; min-height: 80px; }
+    label { font-size: 14px; font-weight: 600; margin-bottom: 5px; display: block; }
+    .experience-item, .education-item {
+      padding: 15px;
+      border: 1px dashed #aaa;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fdfdfd;
+      position: relative;
+    }
+    .delete-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .delete-btn:hover { background: #c0392b; }
+    .add-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .add-btn:hover { background: #0056b3; }
+    .ai-btn {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .ai-btn:hover { background: #1e7e34; }
+    button[type="submit"] {
+      padding: 15px;
+      background: linear-gradient(45deg, #007bff, #00c6ff);
+      color: white;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover { background: linear-gradient(45deg, #0056b3, #00a6d6); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 ATS Resume Builder</h1>
+
+    <form method="POST" action="/generate">
+
+      <input name="name" placeholder="Full Name" required />
+      <input name="email" type="email" placeholder="Email" required />
+      <input name="phone" type="tel" placeholder="Phone (e.g., +91-9876543210)" required />
+      <input name="location" placeholder="Location (City, State, Country)" required />
+      <input name="linkedin" type="url" placeholder="LinkedIn URL" />
+
+      <label for="summary">Professional Summary</label>
+      <textarea name="summary" id="summary" placeholder="Write a short professional summary..."></textarea>
+      <button type="button" class="ai-btn" onclick="generateAISummary()">✨ Generate AI Summary</button>
+
+      <label for="skills">Skills</label>
+      <textarea name="skills" id="skills" placeholder="One skill per line"></textarea>
+
+      <!-- EXPERIENCE SECTION -->
+      <label>Work Experience</label>
+      <div id="experience-section">
+        <div class="experience-item">
+          <button type="button" class="delete-btn" onclick="removeBox(this)">×</button>
+          <input name="job_title[]" placeholder="Job Title" required />
+          <input name="company[]" placeholder="Company Name" required />
+          <label>Start Date</label>
+          <input type="date" name="exp_start[]" required />
+          <label>End Date</label>
+          <input type="date" name="exp_end[]" required />
+          <textarea name="experience_desc[]" placeholder="Describe your responsibilities..."></textarea>
+        </div>
+      </div>
+      <button type="button" class="add-btn" onclick="addExperience()">+ Add More Experience</button>
+
+      <!-- EDUCATION SECTION -->
+      <label>Education</label>
+      <div id="education-section">
+        <div class="education-item">
+          <button type="button" class="delete-btn" onclick="removeBox(this)">×</button>
+          <input name="degree[]" placeholder="Degree (e.g., B.Tech CSE)" required />
+          <input name="institution[]" placeholder="Institution Name" required />
+          <input name="year_of_passing[]" placeholder="Year of Passing (e.g., 2024)" required />
+        </div>
+      </div>
+      <button type="button" class="add-btn" onclick="addEducation()">+ Add More Education</button>
+
+      <label>Projects</label>
+      <textarea name="projects"></textarea>
+
+      <label>Certifications</label>
+      <textarea name="certifications"></textarea>
+
+      <label>Other Details</label>
+      <textarea name="other_details"></textarea>
+
+      <button type="submit">✨ Generate Resume</button>
+    </form>
+  </div>
+
+  <script>
+    function removeBox(button) { button.parentElement.remove(); }
+
+    function addExperience() {
+      let expDiv = document.createElement("div");
+      expDiv.classList.add("experience-item");
+      expDiv.innerHTML = `
+        <button type="button" class="delete-btn" onclick="removeBox(this)">×</button>
+        <input name="job_title[]" placeholder="Job Title" required />
+        <input name="company[]" placeholder="Company Name" required />
+        <label>Start Date</label>
+        <input type="date" name="exp_start[]" required />
+        <label>End Date</label>
+        <input type="date" name="exp_end[]" required />
+        <textarea name="experience_desc[]" placeholder="Describe your responsibilities..."></textarea>
+      `;
+      document.getElementById("experience-section").appendChild(expDiv);
+    }
+
+    function addEducation() {
+      let eduDiv = document.createElement("div");
+      eduDiv.classList.add("education-item");
+      eduDiv.innerHTML = `
+        <button type="button" class="delete-btn" onclick="removeBox(this)">×</button>
+        <input name="degree[]" placeholder="Degree (e.g., B.Tech CSE)" required />
+        <input name="institution[]" placeholder="Institution Name" required />
+        <input name="year_of_passing[]" placeholder="Year of Passing (e.g., 2024)" required />
+      `;
+      document.getElementById("education-section").appendChild(eduDiv);
+    }
+
+    // ✅ Fetch AI Summary
+    function generateAISummary() {
+      const name = document.querySelector('input[name="name"]').value;
+      const skills = document.getElementById("skills").value;
+
+      if (!name || !skills) {
+        alert("Enter your Name and Skills first to generate AI Summary!");
+        return;
+      }
+
+      fetch("/generate_summary", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: name, skills: skills })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("summary").value = data.summary;
+      })
+      .catch(() => alert("❌ Error generating AI summary!"));
+    }
+  </script>
+</body>
+</html>

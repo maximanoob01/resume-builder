@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.env
+
+# PDF output folder
+output/
+
+# VS Code
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db

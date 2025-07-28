@@ -1,0 +1,265 @@
+2025-06-24 03:16:06,483 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-24 03:16:06,483 - [33mPress CTRL+C to quit[0m
+2025-06-24 03:16:06,493 -  * Restarting with stat
+2025-06-24 03:16:06,833 -  * Debugger is active!
+2025-06-24 03:16:06,840 -  * Debugger PIN: 756-425-709
+2025-06-24 03:16:41,692 - 127.0.0.1 - - [24/Jun/2025 03:16:41] "GET / HTTP/1.1" 200 -
+2025-06-24 03:16:41,751 - 127.0.0.1 - - [24/Jun/2025 03:16:41] "[33mGET /static/css/styles.css HTTP/1.1[0m" 404 -
+2025-06-24 03:16:41,848 - 127.0.0.1 - - [24/Jun/2025 03:16:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-24 03:17:20,354 - 127.0.0.1 - - [24/Jun/2025 03:17:20] "[35m[1mPOST /generate HTTP/1.1[0m" 500 -
+2025-06-24 03:17:20,532 - 127.0.0.1 - - [24/Jun/2025 03:17:20] "GET /generate?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-06-24 03:17:20,570 - 127.0.0.1 - - [24/Jun/2025 03:17:20] "GET /generate?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-06-24 03:17:20,608 - 127.0.0.1 - - [24/Jun/2025 03:17:20] "GET /generate?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-06-24 03:17:20,624 - 127.0.0.1 - - [24/Jun/2025 03:17:20] "[36mGET /generate?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-06-24 03:19:11,076 -  * Detected change in 'C:\\Users\\gshou\\resume_builder\\app.py', reloading
+2025-06-24 03:19:11,117 -  * Restarting with stat
+2025-06-24 03:23:30,313 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-24 03:23:30,314 - [33mPress CTRL+C to quit[0m
+2025-06-24 03:23:30,315 -  * Restarting with stat
+2025-06-24 03:23:30,615 -  * Debugger is active!
+2025-06-24 03:23:30,620 -  * Debugger PIN: 756-425-709
+2025-06-24 03:23:38,575 - Resume created for Shourya Gupta | Email: gshourya665@gmail.com | Phone: 07820095590
+2025-06-24 03:23:38,674 - 127.0.0.1 - - [24/Jun/2025 03:23:38] "POST /generate HTTP/1.1" 200 -
+2025-06-24 03:37:59,259 -  * Detected change in 'C:\\Users\\gshou\\resume_builder\\app.py', reloading
+2025-06-24 03:37:59,347 -  * Restarting with stat
+2025-06-24 03:40:54,031 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-24 03:40:54,032 - [33mPress CTRL+C to quit[0m
+2025-06-24 03:40:54,034 -  * Restarting with stat
+2025-06-24 03:40:54,357 -  * Debugger is active!
+2025-06-24 03:40:54,363 -  * Debugger PIN: 756-425-709
+2025-06-24 03:41:10,086 - 127.0.0.1 - - [24/Jun/2025 03:41:10] "[31m[1mGET /generate HTTP/1.1[0m" 405 -
+2025-06-24 03:41:13,369 - 127.0.0.1 - - [24/Jun/2025 03:41:13] "GET / HTTP/1.1" 200 -
+2025-06-24 03:43:09,276 - Resume created for Shourya Gupta | Email: gshourya665@gmail.com | Phone: 07820095590
+2025-06-24 03:43:09,402 - 127.0.0.1 - - [24/Jun/2025 03:43:09] "POST /generate HTTP/1.1" 200 -
+2025-06-24 03:48:10,627 - 127.0.0.1 - - [24/Jun/2025 03:48:10] "GET / HTTP/1.1" 200 -
+2025-06-24 03:50:13,347 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-24 03:50:13,347 - [33mPress CTRL+C to quit[0m
+2025-06-24 03:50:13,350 -  * Restarting with stat
+2025-06-24 03:50:13,732 -  * Debugger is active!
+2025-06-24 03:50:13,736 -  * Debugger PIN: 756-425-709
+2025-06-24 03:50:18,011 - 127.0.0.1 - - [24/Jun/2025 03:50:18] "GET / HTTP/1.1" 200 -
+2025-06-24 03:52:33,855 - Resume created for Shourya Gupta | Email: gshourya665@gmail.com | Phone: 07820095590
+2025-06-24 03:52:33,987 - 127.0.0.1 - - [24/Jun/2025 03:52:33] "POST /generate HTTP/1.1" 200 -
+2025-06-24 03:58:34,973 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-24 03:58:34,974 - [33mPress CTRL+C to quit[0m
+2025-06-24 03:58:34,976 -  * Restarting with stat
+2025-06-24 03:58:35,372 -  * Debugger is active!
+2025-06-24 03:58:35,376 -  * Debugger PIN: 756-425-709
+2025-06-24 03:58:39,202 - 127.0.0.1 - - [24/Jun/2025 03:58:39] "GET / HTTP/1.1" 200 -
+2025-06-24 03:59:29,377 - Resume created for Shourya Gupta | Email: gshourya665@gmail.com | Phone: 07820095590
+2025-06-24 03:59:29,500 - 127.0.0.1 - - [24/Jun/2025 03:59:29] "POST /generate HTTP/1.1" 200 -
+2025-06-24 04:02:16,407 - 127.0.0.1 - - [24/Jun/2025 04:02:16] "GET / HTTP/1.1" 200 -
+2025-06-24 05:39:11,513 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-24 05:39:11,514 - [33mPress CTRL+C to quit[0m
+2025-06-24 05:39:11,517 -  * Restarting with stat
+2025-06-24 05:39:12,005 -  * Debugger is active!
+2025-06-24 05:39:12,028 -  * Debugger PIN: 756-425-709
+2025-06-24 05:39:16,462 - 127.0.0.1 - - [24/Jun/2025 05:39:16] "GET / HTTP/1.1" 200 -
+2025-06-24 05:39:57,453 - Resume created for Shourya Gupta | Email: gshourya665@gmail.com | Phone: 07820095590
+2025-06-24 05:39:57,612 - 127.0.0.1 - - [24/Jun/2025 05:39:57] "POST /generate HTTP/1.1" 200 -
+2025-06-24 05:39:58,910 - Resume created for Shourya Gupta | Email: gshourya665@gmail.com | Phone: 07820095590
+2025-06-24 05:39:58,911 - 127.0.0.1 - - [24/Jun/2025 05:39:58] "POST /generate HTTP/1.1" 200 -
+2025-06-24 05:42:57,856 - 127.0.0.1 - - [24/Jun/2025 05:42:57] "GET / HTTP/1.1" 200 -
+2025-06-24 05:43:06,284 - Resume created for Shourya Gupta | Email: gshourya665@gmail.com | Phone: 07820095590
+2025-06-24 05:43:06,286 - 127.0.0.1 - - [24/Jun/2025 05:43:06] "POST /generate HTTP/1.1" 200 -
+2025-06-24 05:45:46,074 - 127.0.0.1 - - [24/Jun/2025 05:45:46] "GET / HTTP/1.1" 200 -
+2025-06-24 05:45:53,739 - Resume created for Shourya Gupta | Email: gshourya665@gmail.com | Phone: 07820095590
+2025-06-24 05:45:53,740 - 127.0.0.1 - - [24/Jun/2025 05:45:53] "POST /generate HTTP/1.1" 200 -
+2025-06-24 05:46:54,144 - Resume created for Shourya Gupta | Email: gshourya665@gmail.com | Phone: 07820095590
+2025-06-24 05:46:54,146 - 127.0.0.1 - - [24/Jun/2025 05:46:54] "POST /generate HTTP/1.1" 200 -
+2025-06-24 05:47:22,299 - Resume created for Shourya Gupta | Email: gshourya665@gmail.com | Phone: 07820095590
+2025-06-24 05:47:22,300 - 127.0.0.1 - - [24/Jun/2025 05:47:22] "POST /generate HTTP/1.1" 200 -
+2025-06-24 14:45:54,595 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-24 14:45:54,597 - [33mPress CTRL+C to quit[0m
+2025-06-24 14:45:54,601 -  * Restarting with stat
+2025-06-24 14:45:55,310 -  * Debugger is active!
+2025-06-24 14:45:55,325 -  * Debugger PIN: 756-425-709
+2025-06-24 14:46:07,088 - 127.0.0.1 - - [24/Jun/2025 14:46:07] "GET / HTTP/1.1" 200 -
+2025-06-24 14:46:07,406 - 127.0.0.1 - - [24/Jun/2025 14:46:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-24 16:43:19,749 - Resume created for Ashish Yadav | Email: ashishff2005@gmail.com | Phone: 923545095239
+2025-06-24 16:43:19,847 - 127.0.0.1 - - [24/Jun/2025 16:43:19] "POST /generate HTTP/1.1" 200 -
+2025-06-24 16:45:44,339 - 127.0.0.1 - - [24/Jun/2025 16:45:44] "GET / HTTP/1.1" 200 -
+2025-06-24 16:46:09,199 - Resume created for Ashish Yadav | Email: ashishff2005@gmail.com | Phone: 923545095239
+2025-06-24 16:46:09,201 - 127.0.0.1 - - [24/Jun/2025 16:46:09] "POST /generate HTTP/1.1" 200 -
+2025-06-25 17:36:25,063 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-25 17:36:25,063 - [33mPress CTRL+C to quit[0m
+2025-06-25 17:36:25,070 -  * Restarting with stat
+2025-06-25 17:36:25,381 -  * Debugger is active!
+2025-06-25 17:36:25,388 -  * Debugger PIN: 756-425-709
+2025-06-25 17:36:33,237 - 127.0.0.1 - - [25/Jun/2025 17:36:33] "GET / HTTP/1.1" 200 -
+2025-06-25 17:38:04,100 - Resume created for Ashish Yadav | Email: ashishff2005@gmail.com | Phone: 923545095239
+2025-06-25 17:38:04,221 - 127.0.0.1 - - [25/Jun/2025 17:38:04] "POST /generate HTTP/1.1" 200 -
+2025-06-28 12:57:55,850 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-28 12:57:55,851 - [33mPress CTRL+C to quit[0m
+2025-06-28 12:57:55,869 -  * Restarting with stat
+2025-06-28 12:57:56,693 -  * Debugger is active!
+2025-06-28 12:57:56,706 -  * Debugger PIN: 756-425-709
+2025-06-28 23:21:48,503 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-28 23:21:48,504 - [33mPress CTRL+C to quit[0m
+2025-06-28 23:21:48,506 -  * Restarting with stat
+2025-06-28 23:21:49,028 -  * Debugger is active!
+2025-06-28 23:21:49,034 -  * Debugger PIN: 756-425-709
+2025-06-28 23:22:13,196 - 127.0.0.1 - - [28/Jun/2025 23:22:13] "[31m[1mGET /generate HTTP/1.1[0m" 405 -
+2025-06-28 23:22:14,745 - 127.0.0.1 - - [28/Jun/2025 23:22:14] "[31m[1mGET /generate HTTP/1.1[0m" 405 -
+2025-06-28 23:22:46,855 - 127.0.0.1 - - [28/Jun/2025 23:22:46] "GET / HTTP/1.1" 200 -
+2025-06-28 23:23:25,669 - Resume created for Ashish Yadav | Email: ashishff2005@gmail.com | Phone: 923545095239
+2025-06-28 23:23:25,868 - 127.0.0.1 - - [28/Jun/2025 23:23:25] "POST /generate HTTP/1.1" 200 -
+2025-07-05 18:10:13,556 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-05 18:10:13,556 - [33mPress CTRL+C to quit[0m
+2025-07-05 18:10:13,556 -  * Restarting with stat
+2025-07-05 18:10:13,829 -  * Debugger is active!
+2025-07-05 18:10:13,843 -  * Debugger PIN: 756-425-709
+2025-07-05 18:10:38,930 - 127.0.0.1 - - [05/Jul/2025 18:10:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-10 17:48:49,448 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-10 17:48:49,449 - [33mPress CTRL+C to quit[0m
+2025-07-10 17:48:49,456 -  * Restarting with stat
+2025-07-10 17:48:49,747 -  * Debugger is active!
+2025-07-10 17:48:49,756 -  * Debugger PIN: 756-425-709
+2025-07-27 23:35:12,543 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-27 23:35:12,543 - [33mPress CTRL+C to quit[0m
+2025-07-27 23:35:12,553 -  * Restarting with stat
+2025-07-27 23:35:12,962 -  * Debugger is active!
+2025-07-27 23:35:12,962 -  * Debugger PIN: 756-425-709
+2025-07-27 23:37:08,932 -  * Detected change in 'C:\\Users\\gshou\\resume_builder\\app.py', reloading
+2025-07-27 23:37:09,015 -  * Restarting with stat
+2025-07-27 23:50:58,314 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.75.204:5000
+2025-07-27 23:50:58,314 - [33mPress CTRL+C to quit[0m
+2025-07-27 23:50:58,318 -  * Restarting with stat
+2025-07-27 23:50:58,904 -  * Debugger is active!
+2025-07-27 23:50:58,907 -  * Debugger PIN: 756-425-709
+2025-07-27 23:51:12,821 - 127.0.0.1 - - [27/Jul/2025 23:51:12] "GET / HTTP/1.1" 200 -
+2025-07-27 23:51:13,289 - 127.0.0.1 - - [27/Jul/2025 23:51:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-27 23:54:04,707 - 127.0.0.1 - - [27/Jul/2025 23:54:04] "[35m[1mPOST /generate HTTP/1.1[0m" 500 -
+2025-07-27 23:54:05,039 - 127.0.0.1 - - [27/Jul/2025 23:54:05] "GET /generate?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-07-27 23:54:05,106 - 127.0.0.1 - - [27/Jul/2025 23:54:05] "GET /generate?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-07-27 23:54:05,179 - 127.0.0.1 - - [27/Jul/2025 23:54:05] "[36mGET /generate?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-27 23:54:05,212 - 127.0.0.1 - - [27/Jul/2025 23:54:05] "[36mGET /generate?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-27 23:59:23,940 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.75.204:5000
+2025-07-27 23:59:23,944 - [33mPress CTRL+C to quit[0m
+2025-07-27 23:59:23,947 -  * Restarting with stat
+2025-07-27 23:59:24,503 -  * Debugger is active!
+2025-07-27 23:59:24,509 -  * Debugger PIN: 756-425-709
+2025-07-27 23:59:29,214 - 127.0.0.1 - - [27/Jul/2025 23:59:29] "GET / HTTP/1.1" 200 -
+2025-07-28 00:00:37,235 -  * Detected change in 'C:\\Users\\gshou\\resume_builder\\app.py', reloading
+2025-07-28 00:00:37,314 -  * Restarting with stat
+2025-07-28 00:00:37,985 -  * Debugger is active!
+2025-07-28 00:00:37,991 -  * Debugger PIN: 756-425-709
+2025-07-28 00:00:41,377 -  * Detected change in 'C:\\Users\\gshou\\resume_builder\\app.py', reloading
+2025-07-28 00:00:41,424 -  * Restarting with stat
+2025-07-28 00:00:41,997 -  * Debugger is active!
+2025-07-28 00:00:41,997 -  * Debugger PIN: 756-425-709
+2025-07-28 00:00:45,335 -  * Detected change in 'C:\\Users\\gshou\\resume_builder\\app.py', reloading
+2025-07-28 00:00:45,406 -  * Restarting with stat
+2025-07-28 00:00:45,919 -  * Debugger is active!
+2025-07-28 00:00:45,924 -  * Debugger PIN: 756-425-709
+2025-07-28 00:00:47,603 - 127.0.0.1 - - [28/Jul/2025 00:00:47] "GET / HTTP/1.1" 200 -
+2025-07-28 00:01:04,609 - \u2705 Resume created for Shourya Gupta (gshourya665@gmail.com)
+2025-07-28 00:01:04,737 - 127.0.0.1 - - [28/Jul/2025 00:01:04] "POST /generate HTTP/1.1" 200 -
+2025-07-28 00:01:55,808 -  * Detected change in 'C:\\Users\\gshou\\resume_builder\\app.py', reloading
+2025-07-28 00:01:55,861 -  * Restarting with stat
+2025-07-28 00:01:56,421 -  * Debugger is active!
+2025-07-28 00:01:56,428 -  * Debugger PIN: 756-425-709
+2025-07-28 00:06:09,792 - 127.0.0.1 - - [28/Jul/2025 00:06:09] "GET / HTTP/1.1" 200 -
+2025-07-28 00:12:54,827 - 127.0.0.1 - - [28/Jul/2025 00:12:54] "GET / HTTP/1.1" 200 -
+2025-07-28 00:20:14,606 - 127.0.0.1 - - [28/Jul/2025 00:20:14] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2025-07-28 00:20:14,623 - 127.0.0.1 - - [28/Jul/2025 00:20:14] "GET / HTTP/1.1" 200 -
+2025-07-28 00:20:31,420 - 127.0.0.1 - - [28/Jul/2025 00:20:31] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2025-07-28 00:20:31,432 - 127.0.0.1 - - [28/Jul/2025 00:20:31] "GET / HTTP/1.1" 200 -
+2025-07-28 00:22:00,166 - 127.0.0.1 - - [28/Jul/2025 00:22:00] "GET / HTTP/1.1" 200 -
+2025-07-28 00:22:10,554 - 127.0.0.1 - - [28/Jul/2025 00:22:10] "GET / HTTP/1.1" 200 -
+2025-07-28 00:22:10,970 - 127.0.0.1 - - [28/Jul/2025 00:22:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-28 00:22:19,739 - 127.0.0.1 - - [28/Jul/2025 00:22:19] "[32mPOST /generate HTTP/1.1[0m" 302 -
+2025-07-28 00:22:19,756 - 127.0.0.1 - - [28/Jul/2025 00:22:19] "GET / HTTP/1.1" 200 -
+2025-07-28 00:22:36,987 -  * Detected change in 'C:\\Users\\gshou\\resume_builder\\app.py', reloading
+2025-07-28 00:22:37,228 -  * Restarting with stat
+2025-07-28 00:23:26,942 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.75.204:5000
+2025-07-28 00:23:26,942 - [33mPress CTRL+C to quit[0m
+2025-07-28 00:23:26,950 -  * Restarting with stat
+2025-07-28 00:23:27,673 -  * Debugger is active!
+2025-07-28 00:23:27,696 -  * Debugger PIN: 756-425-709
+2025-07-28 00:23:30,186 - 127.0.0.1 - - [28/Jul/2025 00:23:30] "GET / HTTP/1.1" 200 -
+2025-07-28 00:23:37,180 - 127.0.0.1 - - [28/Jul/2025 00:23:37] "[35m[1mPOST /generate HTTP/1.1[0m" 500 -
+2025-07-28 00:23:37,667 - 127.0.0.1 - - [28/Jul/2025 00:23:37] "[36mGET /generate?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-07-28 00:23:37,679 - 127.0.0.1 - - [28/Jul/2025 00:23:37] "[36mGET /generate?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-07-28 00:23:37,741 - 127.0.0.1 - - [28/Jul/2025 00:23:37] "[36mGET /generate?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-28 00:23:56,637 -  * Detected change in 'C:\\Users\\gshou\\resume_builder\\app.py', reloading
+2025-07-28 00:23:56,706 -  * Restarting with stat
+2025-07-28 00:23:57,458 -  * Debugger is active!
+2025-07-28 00:23:57,466 -  * Debugger PIN: 756-425-709
+2025-07-28 00:24:06,525 - 127.0.0.1 - - [28/Jul/2025 00:24:06] "GET / HTTP/1.1" 200 -
+2025-07-28 00:24:14,253 - \u2705 Resume created for Shourya Gupta (gshourya665@gmail.com)
+2025-07-28 00:24:14,431 - 127.0.0.1 - - [28/Jul/2025 00:24:14] "POST /generate HTTP/1.1" 200 -
+2025-07-28 00:54:04,185 - 127.0.0.1 - - [28/Jul/2025 00:54:04] "GET / HTTP/1.1" 200 -
+2025-07-28 00:54:14,863 - \u2705 Resume created for Shourya Gupta (gshourya665@gmail.com)
+2025-07-28 00:54:14,863 - 127.0.0.1 - - [28/Jul/2025 00:54:14] "POST /generate HTTP/1.1" 200 -
+2025-07-28 00:54:53,500 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.75.204:5000
+2025-07-28 00:54:53,505 - [33mPress CTRL+C to quit[0m
+2025-07-28 00:54:53,509 -  * Restarting with stat
+2025-07-28 00:54:54,257 -  * Debugger is active!
+2025-07-28 00:54:54,286 -  * Debugger PIN: 756-425-709
+2025-07-28 00:54:57,976 - 127.0.0.1 - - [28/Jul/2025 00:54:57] "GET / HTTP/1.1" 200 -
+2025-07-28 01:17:31,234 -  * Detected change in 'C:\\Users\\gshou\\resume_builder\\app.py', reloading
+2025-07-28 01:17:31,321 -  * Restarting with stat
+2025-07-28 01:21:08,265 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.75.204:5000
+2025-07-28 01:21:08,265 - [33mPress CTRL+C to quit[0m
+2025-07-28 01:21:08,267 -  * Restarting with stat
+2025-07-28 01:21:08,975 -  * Debugger is active!
+2025-07-28 01:21:08,975 -  * Debugger PIN: 756-425-709
+2025-07-28 01:21:15,431 - 127.0.0.1 - - [28/Jul/2025 01:21:15] "GET / HTTP/1.1" 200 -
+2025-07-28 01:23:14,540 - 127.0.0.1 - - [28/Jul/2025 01:23:14] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:23:47,276 - 127.0.0.1 - - [28/Jul/2025 01:23:47] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:23:49,892 - 127.0.0.1 - - [28/Jul/2025 01:23:49] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:23:54,405 - 127.0.0.1 - - [28/Jul/2025 01:23:54] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:24:50,865 - \u2705 Resume created for Shourya Gupta (gshourya665@gmail.com)
+2025-07-28 01:24:50,940 - 127.0.0.1 - - [28/Jul/2025 01:24:50] "POST /generate HTTP/1.1" 200 -
+2025-07-28 01:26:18,449 - 127.0.0.1 - - [28/Jul/2025 01:26:18] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:26:19,209 - 127.0.0.1 - - [28/Jul/2025 01:26:19] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:26:19,392 - 127.0.0.1 - - [28/Jul/2025 01:26:19] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:26:20,407 - 127.0.0.1 - - [28/Jul/2025 01:26:20] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:26:20,577 - 127.0.0.1 - - [28/Jul/2025 01:26:20] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:26:22,089 - 127.0.0.1 - - [28/Jul/2025 01:26:22] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:26:22,264 - 127.0.0.1 - - [28/Jul/2025 01:26:22] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:27:05,234 - 127.0.0.1 - - [28/Jul/2025 01:27:05] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:27:17,886 - \u2705 Resume created for Shourya Gupta (gshourya665@gmail.com)
+2025-07-28 01:27:17,886 - 127.0.0.1 - - [28/Jul/2025 01:27:17] "POST /generate HTTP/1.1" 200 -
+2025-07-28 01:28:45,297 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.75.204:5000
+2025-07-28 01:28:45,297 - [33mPress CTRL+C to quit[0m
+2025-07-28 01:28:45,297 -  * Restarting with stat
+2025-07-28 01:28:46,025 -  * Debugger is active!
+2025-07-28 01:28:46,029 -  * Debugger PIN: 756-425-709
+2025-07-28 01:28:49,643 - 127.0.0.1 - - [28/Jul/2025 01:28:49] "GET / HTTP/1.1" 200 -
+2025-07-28 01:28:49,820 - 127.0.0.1 - - [28/Jul/2025 01:28:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-28 01:29:13,820 - 127.0.0.1 - - [28/Jul/2025 01:29:13] "POST /generate_summary HTTP/1.1" 200 -
+2025-07-28 01:30:26,498 -  * Detected change in 'C:\\Users\\gshou\\resume_builder\\app.py', reloading
+2025-07-28 01:30:26,570 -  * Restarting with stat
