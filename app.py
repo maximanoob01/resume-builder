@@ -8,6 +8,13 @@ import threading
 import re
 import logging
 from openai import OpenAI  # ✅ Updated import
+import shutil
+import pdfkit
+
+# Find wkhtmltopdf on Linux/Render
+path_wkhtmltopdf = shutil.which("wkhtmltopdf")
+
+config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
 
 # ✅ Initialize OpenAI client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
