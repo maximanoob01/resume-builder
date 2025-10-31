@@ -1,148 +1,143 @@
 from dotenv import load_dotenv
 load_dotenv()  # ✅ Loads variables from .env
 
-from flask import Flask, render_template, request, send_file, redirect, flash, url_for, jsonify
+from flask import Flask, render_template, request, send_file, redirect, flash, url_for
 import pdfkit
 import os
 import threading
 import re
 import logging
-from openai import OpenAI  # ✅ Updated import
 import shutil
-import pdfkit
 
-# Find wkhtmltopdf on Linux/Render
+# ✅ Locate wkhtmltopdf binary
 path_wkhtmltopdf = shutil.which("wkhtmltopdf")
+if not path_wkhtmltopdf:
+    raise FileNotFoundError("❌ wkhtmltopdf not found. Install it and add to PATH.")
 
-config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
-
-# ✅ Initialize OpenAI client
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-# ✅ Path to wkhtmltopdf executable
 config = pdfkit.configuration(
     wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
 )
 
+# Flask app
 app = Flask(__name__)
-app.secret_key = "supersecretkey"
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "supersecretkey")
 
+# Logging
 os.makedirs("output", exist_ok=True)
-
-logging.basicConfig(filename="resume_log.txt", level=logging.INFO,
-                    format="%(asctime)s - %(message)s")
-
-
-def sanitize_input(text):
-    return re.sub(r"<[^>]*?>", "", text)
+logging.basicConfig(
+    filename="resume_log.txt",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 
-def delete_file_later(filepath, delay=60):
+# -------------------- UTILITIES --------------------
+def sanitize_input(text: str) -> str:
+    """Remove HTML tags and strip spaces from user input."""
+    if not text:
+        return ""
+    return re.sub(r"<[^>]*?>", "", text).strip()
+
+
+def delete_file_later(filepath: str, delay: int = 60):
+    """Delete file automatically after `delay` seconds."""
     def delete():
         if os.path.exists(filepath):
-            os.remove(filepath)
-            print(f"🗑️ Deleted: {filepath}")
+            try:
+                os.remove(filepath)
+                logging.info(f"🗑️ Deleted expired file: {filepath}")
+            except Exception as e:
+                logging.error(f"❌ Failed to delete {filepath}: {e}")
     threading.Timer(delay, delete).start()
 
 
+# -------------------- ROUTES --------------------
 @app.route("/")
 def home():
     return render_template("form.html")
 
 
-@app.route("/generate_summary", methods=["POST"])
-def generate_summary():
-    """🔹 Generates an exaggerated AI professional summary."""
-    data = request.json
-    name = data.get("name", "Professional")
-    skills = data.get("skills", "")
-
-    prompt = f"""
-    Create an exaggerated, highly impressive professional summary for {name}.
-    Highlight leadership, innovation, and extraordinary skills in:
-    {skills}.
-    Make it sound like a confident, visionary leader ready to achieve big things.
-    """
-
-    try:
-        response = client.chat.completions.create(
-            model="gpt-4o-mini",  # ✅ Updated new API usage
-            messages=[
-                {"role": "system", "content": "You are an expert resume writer."},
-                {"role": "user", "content": prompt}
-            ],
-            max_tokens=150,
-            temperature=0.8
-        )
-
-        summary_text = response.choices[0].message.content.strip()
-
-    except Exception as e:
-        print(f"❌ OpenAI Error: {e}")
-        return jsonify({"summary": "⚠️ Error generating AI summary. Try again later."})
-
-    return jsonify({"summary": summary_text})
-
-
 @app.route("/generate", methods=["POST"])
 def generate_resume():
-    education = []
-    for i in range(len(request.form.getlist("degree[]"))):
-        education.append({
-            "degree": sanitize_input(request.form.getlist("degree[]")[i]),
-            "institution": sanitize_input(request.form.getlist("institution[]")[i]),
-            "year_of_passing": sanitize_input(request.form.getlist("year_of_passing[]")[i])
-        })
-
-    experience = []
-    for i in range(len(request.form.getlist("job_title[]"))):
-        experience.append({
-            "job_title": sanitize_input(request.form.getlist("job_title[]")[i]),
-            "company": sanitize_input(request.form.getlist("company[]")[i]),
-            "exp_start": sanitize_input(request.form.getlist("exp_start[]")[i]),
-            "exp_end": sanitize_input(request.form.getlist("exp_end[]")[i]),
-            "experience_desc": sanitize_input(request.form.getlist("experience_desc[]")[i])
-        })
-
-    name = request.form.get("name", "").strip()
-    email = request.form.get("email", "").strip()
-    phone = request.form.get("phone", "").strip()
-
-    if not name or not email or not phone:
-        flash("Name, Email, and Phone are required!")
-        return redirect(url_for("home"))
-
-    html = render_template(
-        "resume_template.html",
-        name=name,
-        email=email,
-        phone=phone,
-        location=request.form.get("location", ""),
-        linkedin=request.form.get("linkedin", ""),
-        skills=request.form.get("skills", ""),
-        projects=request.form.get("projects", ""),
-        certifications=request.form.get("certifications", ""),
-        other_details=request.form.get("other_details", ""),
-        education=education,
-        experience=experience
-    )
-
-    filename = f"{name.replace(' ', '_')}_resume.pdf"
-    pdf_path = os.path.join("output", filename)
-
+    """🔹 Generate PDF resume from form input."""
     try:
+        # Collect education entries
+        education = [
+            {
+                "degree": sanitize_input(deg),
+                "institution": sanitize_input(inst),
+                "year_of_passing": sanitize_input(yr)
+            }
+            for deg, inst, yr in zip(
+                request.form.getlist("degree[]"),
+                request.form.getlist("institution[]"),
+                request.form.getlist("year_of_passing[]")
+            )
+        ]
+
+        # Collect experience entries
+        experience = [
+            {
+                "job_title": sanitize_input(title),
+                "company": sanitize_input(comp),
+                "exp_start": sanitize_input(start),
+                "exp_end": sanitize_input(end),
+                "experience_desc": sanitize_input(desc)
+            }
+            for title, comp, start, end, desc in zip(
+                request.form.getlist("job_title[]"),
+                request.form.getlist("company[]"),
+                request.form.getlist("exp_start[]"),
+                request.form.getlist("exp_end[]"),
+                request.form.getlist("experience_desc[]")
+            )
+        ]
+
+        # Required fields
+        name = sanitize_input(request.form.get("name", ""))
+        email = sanitize_input(request.form.get("email", ""))
+        phone = sanitize_input(request.form.get("phone", ""))
+
+        if not name or not email or not phone:
+            flash("⚠️ Name, Email, and Phone are required!")
+            return redirect(url_for("home"))
+
+        # Render HTML template
+        html = render_template(
+            "resume_template.html",
+            name=name,
+            email=email,
+            phone=phone,
+            location=sanitize_input(request.form.get("location", "")),
+            linkedin=sanitize_input(request.form.get("linkedin", "")),
+            skills=sanitize_input(request.form.get("skills", "")),
+            projects=sanitize_input(request.form.get("projects", "")),
+            certifications=sanitize_input(request.form.get("certifications", "")),
+            other_details=sanitize_input(request.form.get("other_details", "")),
+            education=education,
+            experience=experience
+        )
+
+        # Save PDF
+        filename = f"{name.replace(' ', '_')}_resume.pdf"
+        pdf_path = os.path.join("output", filename)
+
         pdfkit.from_string(html, pdf_path, configuration=config)
+
+        # Schedule delete
+        delete_file_later(pdf_path, delay=120)
+
+        logging.info(f"✅ Resume created for {name} ({email})")
+
+        return send_file(pdf_path, as_attachment=True)
+
     except Exception as e:
-        print(f"❌ PDF generation error: {e}")
-        flash("Error generating PDF. Check wkhtmltopdf path.")
+        logging.error(f"❌ Resume generation failed: {e}")
+        flash("Error generating resume. Please try again.")
         return redirect(url_for("home"))
 
-    delete_file_later(pdf_path, delay=60)
-    logging.info(f"✅ Resume created for {name} ({email})")
 
-    return send_file(pdf_path, as_attachment=True)
-
-
+# -------------------- START SERVER --------------------
 if __name__ == "__main__":
     print("\n🚀 Server is running! Open this link in browser:")
     print("👉 http://127.0.0.1:5000\n")
